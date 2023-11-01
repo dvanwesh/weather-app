@@ -1,73 +1,61 @@
-# Getting Started with Create React App
+# Weather App UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://github.com/dvanwesh/weather-app/assets/3809622/28bd9ca2-e36e-4e91-b5b1-0cbf74487ce4
 
-## Available Scripts
+Weather App UI is a simple React project that provides a user interface for fetching and displaying current weather and a ten-day forecast. The application has the following components:
 
-In the project directory, you can run:
+- **SearchInput.js**: This component displays a search input field where users can enter a city name or zip code to search for weather information.
 
-npm install -g @tailwindcss/cli
-tailwindcss build src/css/output.css
+- **App.js**: The main component of the application that fetches current weather and a ten-day forecast from a backend service called `weatherbit-service` and displays the data. It also provides the functionality to toggle between units (metrics and Imperial).
 
-### `npm start`
+- **UnitSelector.js**: This component allows users to toggle between units, switching between metrics and Imperial units for temperature, wind speed, and wind gusts.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **DayList.js**: This component displays the ten-day weather forecast. Users can click on a specific day to view detailed weather information for that day.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **WeatherCard.js**: This component displays the selected day's weather information, including details such as temperature, pressure, humidity, wind speed, and wind gusts.
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To use the Weather App UI, follow these steps:
 
-### `npm run build`
+1. Clone this repository to your local machine.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```shell
+   git clone https://github.com/dvanwesh/weather-app-ui.git
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```shell
+   cd weather-app-ui
+   ```
 
-### `npm run eject`
+3. Install the project dependencies.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```shell
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Start the development server.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```shell
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Open your web browser and visit `http://localhost:3000` to use the Weather App UI.
 
-## Learn More
+## Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Search for weather information by entering a city name or zip code.
+- View the current weather conditions, including city, date, status, temperature, pressure, humidity, wind speed, and wind gusts.
+- Toggle between units (metrics and Imperial) for temperature, wind speed, and wind gusts.
+- View a ten-day weather forecast.
+- Click on a specific day to see detailed weather information using the WeatherCard component.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Dependencies
 
-### Code Splitting
+The project relies on several dependencies, including React and Axios for making API requests. You can find the complete list of dependencies in the `package.json` file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## API Backend
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project assumes the existence of a backend service called `weatherbit-service`. Make sure that the backend service is accessible and provides the necessary API endpoints for fetching current weather and the ten-day forecast.

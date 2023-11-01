@@ -1,0 +1,13 @@
+weather:
+  api:
+    url: https://api.weatherbit.io/v2.0
+    apikey: 3474863e1273484780c75ebe3b0fcc18
+
+spring:
+  mvc:
+    async:
+      request-timeout: 50000
+      spring:
+        mvc:
+          throw-exception-if-no-handler-found=true:
+          throw-exception-if-no-mapping-found=true:

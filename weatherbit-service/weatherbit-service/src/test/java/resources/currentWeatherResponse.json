@@ -1,0 +1,53 @@
+{
+  "count": 1,
+  "data": [
+    {
+      "app_temp": 9.3,
+      "aqi": 36,
+      "city_name": "Atlanta",
+      "clouds": 0,
+      "country_code": "US",
+      "datetime": "2023-11-01:03",
+      "dewpt": -4,
+      "dhi": 0,
+      "dni": 0,
+      "elev_angle": -52.69,
+      "ghi": 0,
+      "gust": null,
+      "h_angle": -90,
+      "lat": 33.749,
+      "lon": -84.38798,
+      "ob_time": "2023-11-01 03:04",
+      "pod": "n",
+      "precip": 0,
+      "pres": 981.4,
+      "rh": 39,
+      "slp": 1017.6,
+      "snow": 0,
+      "solar_rad": 0,
+      "sources": [
+        "1066W",
+        "radar",
+        "satellite"
+      ],
+      "state_code": "GA",
+      "station": "1066W",
+      "sunrise": "11:56",
+      "sunset": "22:45",
+      "temp": 9.2,
+      "timezone": "America/New_York",
+      "ts": 1698807857,
+      "uv": 0,
+      "vis": 16,
+      "weather": {
+        "code": 800,
+        "icon": "c01n",
+        "description": "Clear sky"
+      },
+      "wind_cdir": "NNW",
+      "wind_cdir_full": "north-northwest",
+      "wind_dir": 330,
+      "wind_spd": 7.72
+    }
+  ]
+}

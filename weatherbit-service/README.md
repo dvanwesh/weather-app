@@ -49,13 +49,16 @@ The Weather Service provides two main endpoints to retrieve weather data:
 The Weather Service includes error handling for the following scenarios:
 
 1. **Invalid Units Parameter**:
-   - If the `units` parameter is provided and is not 'I' or 'M', the service will return a 400 Bad Request error with the message "Wrong units submitted, valid units are I and M."
+    - If the `units` parameter is provided and is not 'I' or 'M', the service will return a 400 Bad Request error with the message "Wrong units submitted, valid units are I and M."
 
 2. **Invalid City Parameter**:
-   - If the `city` parameter is provided and contains characters other than letters and spaces, the service will return a 400 Bad Request error with the message "City should contain only letters and spaces."
+    - If the `city` parameter is provided and contains characters other than letters and spaces, the service will return a 400 Bad Request error with the message "City should contain only letters and spaces."
 
 3. **Invalid ZIP Code Parameter**:
-   - If the `zipcode` parameter is provided and contains characters other than digits, the service
+    - If the `zipcode` parameter is provided and contains characters other than digits, the service will return a 400 Bad Request error with the message "Zip code should contain only digits."
+
+4. **Missing City or ZIP Code**:
+    - If both `city` and `zipcode` parameters are missing, the service will return a 400 Bad Request error with the message "City or ZIP code is required."
 
 
 ## Build and Deploy

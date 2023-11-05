@@ -1,6 +1,6 @@
 # Weather App UI
 
-https://github.com/dvanwesh/weather-app/assets/3809622/28bd9ca2-e36e-4e91-b5b1-0cbf74487ce4
+![Weather App UI](https://github.com/dvanwesh/weather-app/assets/3809622/28bd9ca2-e36e-4e91-b5b1-0cbf74487ce4)
 
 Weather App UI is a simple React project that provides a user interface for fetching and displaying current weather and a ten-day forecast. The application has the following components:
 
@@ -20,27 +20,27 @@ To use the Weather App UI, follow these steps:
 
 1. Clone this repository to your local machine.
 
-   ```shell
-   git clone https://github.com/dvanwesh/weather-app-ui.git
-   ```
+   ```shell
+   git clone https://github.com/dvanwesh/weather-app-ui.git
+   ```
 
 2. Navigate to the project directory.
 
-   ```shell
-   cd weather-app-ui
-   ```
+   ```shell
+   cd weather-app-ui
+   ```
 
 3. Install the project dependencies.
 
-   ```shell
-   npm install
-   ```
+   ```shell
+   npm install
+   ```
 
 4. Start the development server.
 
-   ```shell
-   npm start
-   ```
+   ```shell
+   npm start
+   ```
 
 5. Open your web browser and visit `http://localhost:3000` to use the Weather App UI.
 
@@ -51,6 +51,14 @@ To use the Weather App UI, follow these steps:
 - Toggle between units (metrics and Imperial) for temperature, wind speed, and wind gusts.
 - View a ten-day weather forecast.
 - Click on a specific day to see detailed weather information using the WeatherCard component.
+
+## Caching with `localStorage`
+
+The Weather App UI uses `localStorage` to cache search parameters, such as city, zipcode, units, and selectedDay. This cache allows the app to remember your preferences between sessions. Data in `localStorage` remains active indefinitely, but it can be manually cleared by the user.
+
+## Error Handling
+
+The application includes error handling for 400 Bad Requests. If the backend service responds with a 400 error, the UI will display an error message with details about the issue. The error message is styled to stand out and provide a clear indication of what went wrong.
 
 ## Dependencies
 

@@ -13,6 +13,7 @@ const App = () => {
   const [searchType, setSearchType] = useState("");
   const [units, setUnits] = useState("");
   const [selectedDay, setSelectedDay] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -65,6 +66,7 @@ const App = () => {
           setWeatherData(data.weatherData);
           setDailyWeatherData(data.dailyWeatherData);
           setUnits(storedUnits);
+          setError(null);
           return;
         }
       }
@@ -99,8 +101,15 @@ const App = () => {
         setWeatherData(currentWeatherResponse.data);
         setDailyWeatherData(dailyWeatherResponse.data.data);
         setUnits(storedUnits);
+        setError(null);
       } catch (error) {
-        console.error("Error fetching weather data:", error);
+        if (error.response && error.response.status === 400) {
+          // Check if the error is a 400 Bad Request
+          setError(error.response.data.message); // Set error message from the API response
+        } else {
+          console.error("Error fetching weather data:", error);
+          setError("Error fetching weather data. Please try again."); // Set a generic error message
+        }
       }
     }
 
@@ -131,9 +140,12 @@ const App = () => {
   return (
     <div>
       <SearchInput onSubmit={handleSearchChange} />
+      {error && (
+        <div className="text-red-600 font-bold mt-4 error-message">{error}</div>
+      )}
       <div>
-        <h1 className="text-3xl font-bold text-blue-600">Current Weather</h1>
         <UnitSelector onSubmit={handleUnitsChange} />
+        <h1 className="text-3xl font-bold text-blue-600">Current Weather</h1>
         {weatherData && (
           <ul className="list-disc mt-4">
             <li>City: {weatherData.city}</li>
@@ -156,6 +168,7 @@ const App = () => {
           </ul>
         )}
       </div>
+
       <DayList
         dailyWeatherData={dailyWeatherData}
         units={units}

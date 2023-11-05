@@ -6,8 +6,8 @@ Welcome to the Weatherbit Service project! This service is designed to fetch wea
 
 1. [Getting Started](#getting-started)
 2. [API Endpoints](#api-endpoints)
-3. [Build and Deploy](#build-and-deploy)
-4. [Development](#development)
+3. [Error Handling](#error-handling)
+4. [Build and Deploy](#build-and-deploy)
 
 ## Getting Started
 
@@ -43,6 +43,20 @@ The Weather Service provides two main endpoints to retrieve weather data:
     - `units` (Optional): Units for temperature (M for Metric, I for Imperial).
   - **HTTP Method**: GET
   - **Response**: DailyWeatherData
+
+## Error Handling
+
+The Weather Service includes error handling for the following scenarios:
+
+1. **Invalid Units Parameter**:
+   - If the `units` parameter is provided and is not 'I' or 'M', the service will return a 400 Bad Request error with the message "Wrong units submitted, valid units are I and M."
+
+2. **Invalid City Parameter**:
+   - If the `city` parameter is provided and contains characters other than letters and spaces, the service will return a 400 Bad Request error with the message "City should contain only letters and spaces."
+
+3. **Invalid ZIP Code Parameter**:
+   - If the `zipcode` parameter is provided and contains characters other than digits, the service
+
 
 ## Build and Deploy
 
